@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Verdana, sans-serif, Helvetica, sans-serif;
+  background: linear-gradient(rgba(172, 0, 172, 0.527), rgba(68, 0, 68, 0.678));
+}
+
+h1 {
+  font-size: 3rem;
+  color: rgb(75, 0, 75);
+  text-align: center;
+}
+
+.quote-card {
+  position: relative;
+  background-color: purple;
+  color: white;
+  padding: 16px;
+  box-shadow: 0 0 8px rgb(75, 0, 75);
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+button {
+  position: absolute;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 106, 255, 0.418);
+  opacity: .80;
+  right: .75rem;
+  top: .75rem;
+  border-radius: .5rem;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: rgb(75, 0, 75);
+  transition: all 200ms ease;
+  cursor: pointer;
+  height: 80px;
+  aspect-ratio: 1;
+}
+button:hover {
+  opacity: 1;
+}
+button:active {
+  transform: translateY(4px);
+}
+
+#quote {
+  font-weight: 700;
+  font-size: 3rem;
+  color: rgb(75, 0, 75);
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  max-width: 48rem;
+}
+#quote::before {
+  content: '"';
+}
+#quote::after {
+  content: '"';
+}
+
+#author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: .75rem;
+  left: .75rem;
+  padding: 16px;
+  background-color: rgb(75, 0, 75);
+  border-radius: .5rem;
+  color: purple;
+  font-weight: 700;
+  font-size: 1.75rem;
+  height: 80px;
+}
+
+/* loader style */
+#loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid rgb(75, 0, 75);
+  border-radius: 50%;
+  width: 100px;
+  aspect-ratio: 1;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  #quote {
+      font-size: 2rem;
+  }
+  button, #author {
+      font-size: 1.25rem;
+      height: 60px;
+  }
+}
