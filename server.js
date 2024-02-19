@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const request = require('request');
+const path = require('path');
 
 dotenv.config()
 
@@ -11,7 +12,7 @@ app.use(express.json());
 
 // index.html in public folder
 app.get('/', (req, res) => {
-    res.sendFile('/index.html');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/api/quotes', (req, res) => {
