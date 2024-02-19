@@ -1,18 +1,17 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const request = require('request');
-const path = require('path');
+import express from 'express'
+import dotenv from 'dotenv'
+import request from 'request'
+import path from 'path'
 
 dotenv.config()
 
 const app = express()
 
-app.use(express.static('public'));
+app.use(express.static('public'))
 app.use(express.json());
 
-// index.html in public folder
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.resolve(__dirname,'index.html'))
 });
 
 app.get('/api/quotes', (req, res) => {
@@ -38,7 +37,12 @@ app.get('/api/quotes', (req, res) => {
     });
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+app.get('about', (req, res) => {
+    res.send('This is an about page');
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log('Server is running on port 3000')
 });
