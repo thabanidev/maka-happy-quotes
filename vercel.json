@@ -8,6 +8,11 @@
     ],
     "routes": [
       {
+        "src": "/(css|js)/.*",
+        "headers": { "cache-control": "s-maxage=31536000,immutable" },
+        "continue": true
+      },
+      {
         "src": "/(.*)",
         "dest": "server.js"
       }
