@@ -28,7 +28,7 @@ app.get('/quotes', (req, res) => {
         try {
             const data = JSON.parse(body);
             const quote = data[0];
-
+            console.log('Quote:', quote);
             res.json({ quote: quote.quote, author: quote.author });
         } catch (err) {
             console.error('Error parsing API response:', err);
