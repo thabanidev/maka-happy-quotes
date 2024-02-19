@@ -14,7 +14,7 @@ function updateQuote() {
   newQuoteBtn.disabled = true;
 
   const category = 'life'; // Or any desired category
-  fetch(`/api/quotes?category=${category}`)
+  fetch(`https://maka-happy-quotes.vercel.app/quotes?category=${category}`)
       .then(response => response.json())
       .then(data => {
           loader.classList.remove('visible');

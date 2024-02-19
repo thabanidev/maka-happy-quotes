@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname,'index.html'))
 });
 
-app.get('/api/quotes', (req, res) => {
+app.get('/quotes', (req, res) => {
     const category = req.query.category || 'life'; // Get category from query parameter or default to 'life'
     const apiKey = process.env.API_KEY; // Use the loaded API key from .env
 
